@@ -1,4 +1,11 @@
+const queryResultEntity = require('../util/queryResult');
+const commandResultEntity = require('../util/commandResult');
+const eErrorCode = require('../util/eErrorCode');
+
 function getQueryResult(res, queryResult){
+    if (!queryResult)
+        return res.status(400).send(new queryResultEntity.queryResult(null, eErrorCode.invalidParameters, 'Ocorreu um erro na leitura do resultado da consulta.'));
+
     switch (queryResult.errorCode) {
         case 0: 
             res.status(200);
@@ -28,6 +35,9 @@ function getQueryResult(res, queryResult){
 }
 
 function getCommandResult(res, commandResult){
+    if (!commandResult)
+        return res.status(400).send(new commandResultEntity.commandResult(0, eErrorCode.invalidParameters, 'Ocorreu um erro na leitura do resultado da consulta.'));
+
     switch (commandResult.errorCode) {
         case 0: 
             res.status(200);

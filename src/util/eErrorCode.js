@@ -1,4 +1,4 @@
-node = 0;
+none = 0;
 notFound = 1;
 invalidParameters =  2;
 notAllowedCommand = 3;
@@ -18,7 +18,7 @@ function GetErrorCodeName(errorCode) {
 }
 
 module.exports = { 
-    node, 
+    none, 
     notFound, 
     invalidParameters, 
     notAllowedCommand, 
