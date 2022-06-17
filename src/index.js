@@ -7,6 +7,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Controllers
-require('./controllers/authController')(app);
+require('./controllers/usersController')(app);
 
 app.listen(process.env.LISTEN_PORT);
