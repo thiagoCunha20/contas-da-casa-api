@@ -12,4 +12,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Controllers
 require('./controllers/usersController')(app);
 
+console.log(`Listening on port ${process.env.QUERY_AWS_ACCESS_KEY_ID}`);
+
 app.listen(process.env.LISTEN_PORT);

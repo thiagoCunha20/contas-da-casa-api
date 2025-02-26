@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const controllerBase = require('../util/controllerBase');
-const queriesHandler = require('../queries/queriesHandler');
-const listUsersQuery = require('../queries/users/listUsersQuery');
-const getUserQuery = require('../queries/users/getUserQuery');
+const controllerBase = require('../../domain/util/controllerBase');
+const queriesHandler = require('../../domain/queries/queriesHandler');
+const listUsersQuery = require('../../domain/queries/users/listUsersQuery');
+const getUserQuery = require('../../domain/queries/users/getUserQuery');
 
 router.get('/', async (req, res) => {
     var query = new listUsersQuery.listUsers();
